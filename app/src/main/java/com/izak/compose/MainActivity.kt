@@ -31,12 +31,17 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+    // Surface and MaterialTheme are concepts related to Material Design
+    // the component nested inside Surface will be drawn on top of the background color.
+    Surface(color = MaterialTheme.colors.primary) {
+        Text(text = "Hello $name!")
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
+    // Depends On How the Project is named in this case it is compose
     ComposeTheme {
         Greeting("Android")
     }
